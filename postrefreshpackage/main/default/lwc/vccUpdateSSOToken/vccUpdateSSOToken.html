@@ -1,0 +1,54 @@
+<!--
+ - Page Description
+ - 
+ - @author barne
+ -->
+
+<!-- Vcc Update Sso Token -->
+<template>
+    <lightning-card title='Update SSO Token'>
+        <div class="slds-form slds-form_stacked slds-var-m-around_large">
+            <div class="slds-form__row slds-p-around__xxx-small">
+                <lightning-input
+                    type="text"
+                    label="Enter New SSO Token Value"
+                    id="ssoToken"
+                    required="true"
+                    value={token}
+                    onchange={handleToken}
+                >
+                </lightning-input>
+            </div>
+            <div class="slds-form__row slds-p-around__xxx-small">
+                <lightning-input
+                    type="text"
+                    label="Enter DUZ Number"
+                    id="duzValue"
+                    required="true"
+                    value={duzValue}
+                    onchange={handleDUZ}
+                >
+                </lightning-input>
+            </div>
+            <div class="slds-form__row slds-p-around__xxx-small">
+                <lightning-input
+                    type="text"
+                    label="Enter VistA Instance"
+                    id="vistAInstance"
+                    required="true"
+                    value={vistainstance}
+                    onchange={handleVista}
+                >
+                </lightning-input>
+            </div>
+            <div>
+                <lightning-button
+                    variant="brand"
+                    label="Update SSO Setting"
+                    onclick={handleClick}
+                >
+                </lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

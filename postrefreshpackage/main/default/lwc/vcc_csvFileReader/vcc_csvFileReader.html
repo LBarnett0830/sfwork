@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Import Users with CSV File">
+        <div style="margin-left: 3%">
+            <lightning-file-upload 
+                accept={acceptedFormats}
+                label="Attach CSV of Users to Create"
+                multiple="multiple"
+                onuploadfinished={handleUploadFinished}
+                record-id={recordId}
+                class="slds-align_absolute-center">
+            </lightning-file-upload>
+        </div>
+        <div if:true={error}>
+            {error}
+        </div>
+        <br/>
+    </lightning-card>
+
+        <div>
+            <template if:true={showUsersCreated}>
+                <lightning-card title = "Users Created" icon-name="standard:user">
+                    <lightning-datatable 
+                        columns={columns}
+                        data={CreateData}
+                        hide-checkbox-column="true"
+                        key-field="id">
+                    </lightning-datatable>
+                </lightning-card>
+            </template>
+        </div>
+
+        <template if:true={showUsersUpdated}>
+            <lightning-card title = "Users Updated" icon-name="standard:user">
+                <lightning-datatable 
+                    columns={columns}
+                    data={UpdateData}
+                    hide-checkbox-column="true"
+                    key-field="id">
+                </lightning-datatable>
+            </lightning-card>
+        </template>
+
+        <template if:true={fileAdded}>
+            <template if:false={uploadComplete}>
+                <c-vcc-lightning-spinner
+                spinner-text="Creating/Updating Users..."
+                size="large"
+                ></c-vcc-lightning-spinner>
+            </template>
+        </template>
+</template>

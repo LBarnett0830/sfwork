@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>VAHC_Sandbox_Tools</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>VAHC_Sandbox_Tool_User</name>
+    </customPermissions>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>VAHC Sandbox Tool User</label>
+</PermissionSet>

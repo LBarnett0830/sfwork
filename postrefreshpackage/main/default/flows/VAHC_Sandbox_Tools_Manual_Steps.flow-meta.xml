@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Get_Sandbox_Name</name>
+        <label>Get Sandbox Name</label>
+        <locationX>176</locationX>
+        <locationY>398</locationY>
+        <actionName>sandboxNameInvocable</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>VCC_Org_Settings</targetReference>
+        </connector>
+        <flowTransactionModel>Automatic</flowTransactionModel>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <constants>
+        <name>Call_Center_Step_2</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645422000/SandboxToolsCallCenterStep2?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Call_Center_Step_3</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645471000/SandboxToolsCallCenterStep3&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Call_Center_Step_4</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645507000/SandboxToolsCallCenterStep4?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Edit_Custom_Label_Step_4</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645538000/SandboxToolsEditCustomLabelStep4?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Egain_Step_2</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645564000/SandboxToolsEgainStep2?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Egain_Step_3</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645590000/SandboxToolsEgainStep3?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Egain_Step_4</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645612000/SandboxToolsEgainStep4?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Reset_Support_Processes_for_Case_Record_Types_Step_2</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645729000/SandboxToolsResetSupportProcessesforCaseRecordTypesStep2?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Reset_Support_Processes_for_Case_Record_Types_Step_4</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645788000/SandboxToolsResetSupportProcessesforCaseRecordTypesStep4?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Reset_Support_Processes_For_Case_Record_Types_Step_7</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645849000/SandboxToolsResetSupportProcessesforCaseRecordTypesStep7?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Setup_Appt_Template_Step_3</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645644000/SandboxToolsSetupApptTemplateStep3?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Setup_Appt_Topic_Step_5</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645675000/SandboxToolsSetupApptTopicStep5?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>VCC_Org_Settings_Step_2</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645909000/SandboxToolsVCCOrgSettingsStep2?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>VCC_Org_Settings_Step_3</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645942000/SandboxToolsVCCOrgSettingsStep3?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>VCC_Support_Process_Is_Correct_Step_2</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676645981000/SandboxToolsVerifyVCCSupportProcessIsCorrectStep2?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>VISN8_MSA_Queue_Setup</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676646020000/SandboxToolsVISN8MSAQueueSetup?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>VISN8_RN_Queue_Setup</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>&lt;img src = &quot;/resource/1676646044000/SandboxToolsVISN8RNQueueSetup?&quot;&gt;</stringValue>
+        </value>
+    </constants>
+    <description>Updated Call Center URL to reflect what is currently being used by Softphone</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>This formula grabs the URL for the sandbox you&apos;re working in.</description>
+        <name>URL</name>
+        <dataType>String</dataType>
+        <expression>LEFT({!$Api.Partner_Server_URL_470}, FIND(&apos;/services&apos;, {!$Api.Partner_Server_URL_470}))</expression>
+    </formulas>
+    <interviewLabel>VAHC Sandbox Tools Manual Steps {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VAHC Sandbox Tools Manual Steps</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <screens>
+        <name>Call_Center</name>
+        <label>Call Center</label>
+        <locationX>176</locationX>
+        <locationY>638</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>PD_Steps_Reset_Support_Processes</targetReference>
+        </connector>
+        <fields>
+            <name>Call_Center_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Call Center&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Click &lt;a href=&quot;{!URL}lightning/setup/CallCenters/home&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;HERE&lt;/a&gt;&lt;a href=&quot;https://va-vet--{!Get_Sandbox_Name}.my.salesforce.com/apex/cnx_MainPage&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt; &lt;/a&gt;to navigate to Call Center Setup.&lt;/p&gt;&lt;p&gt;2 - Check mark on &quot;Don&apos;t show me this page  again&quot; and click Continue.&lt;/p&gt;&lt;p&gt;{!Call_Center_Step_2}&lt;/p&gt;&lt;p&gt;3 - Click &quot;Edit&quot; for &quot;Connects for Cisco Contact Center V9&quot;.&lt;/p&gt;&lt;p&gt;{!Call_Center_Step_3}&lt;/p&gt;&lt;p&gt;4 - Change the input for the &quot;Connects Gadget URL A&quot; field to:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;https://va-vet--&lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;{!Get_Sandbox_Name}&lt;/strong&gt;&lt;strong&gt;--cnx.visualforce.com/apex/MainPage&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Call_Center_Step_4}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>eGain_Configuration</name>
+        <label>eGain Configuration</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Get_Sandbox_Name</targetReference>
+        </connector>
+        <fields>
+            <name>eGain_Config_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;eGain Configuration&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Click &lt;a href=&quot;{!URL}lightning/setup/ImportedPackage/0A33d0000000822/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;HERE &lt;/a&gt;to navigate to the Manage setting for the eGain CRM.&lt;/p&gt;&lt;p&gt;2- Click &quot;Configure&quot;.&lt;/p&gt;&lt;p&gt;{!Egain_Step_2}&lt;/p&gt;&lt;p&gt;3 - Then, click &quot;New&quot;.&lt;/p&gt;&lt;p&gt;{!Egain_Step_3}&lt;/p&gt;&lt;p&gt;4 - Enter the following:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Name: sfdcvhappd&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;eGain Portal URL: &lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); font-family: Calibri, Calibri_EmbeddedFont, Calibri_MSFontService, sans-serif; font-size: 11pt; color: rgb(0, 0, 0);&quot;&gt;https://vaww.ppd.vrm.km.va.gov/kb/vhaconnect/home&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Object: Case&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Search Field: Subject&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;{!Egain_Step_4}&lt;/p&gt;&lt;p&gt;5 - Click &quot;Save&quot;.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Finish_Screen</name>
+        <label>Finish Screen</label>
+        <locationX>176</locationX>
+        <locationY>1478</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Finish_Text</name>
+            <fieldText>&lt;p&gt;Congrats, {!User_Name}!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;{!Get_Sandbox_Name}&apos;s setup steps are complete!&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Intro_Screen</name>
+        <label>Intro Screen</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>eGain_Configuration</targetReference>
+        </connector>
+        <fields>
+            <name>Intro_Screen_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Complete Sandbox Setup&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Hello, {!User_Name}!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please complete the following steps to finish setting up your sandbox.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Click &quot;Next&quot; to begin.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>PD_Steps_Reset_Support_Processes</name>
+        <label>PD Steps Reset Support Processes</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>PD_Steps_Verify_VCC_Support_Process</targetReference>
+        </connector>
+        <fields>
+            <name>Reset_Support_Processes_for_Case_Record_Types</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Reset Support Processes for Case Record Types&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Click &lt;a href=&quot;{!URL}lightning/setup/ObjectManager/Case/RecordTypes/view&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;HERE &lt;/a&gt;to navigate to Record Types under the Case Object&lt;/p&gt;&lt;p&gt;2 - Click on &quot;Administrative and Scheduling Case&quot;.&lt;/p&gt;&lt;p&gt;{!Reset_Support_Processes_for_Case_Record_Types_Step_2}&lt;/p&gt;&lt;p&gt;3 - Click &quot;Edit&quot;.&lt;/p&gt;&lt;p&gt;4 - Change &quot;VCC Support Process&quot; to &quot;PC Case&quot;.&lt;/p&gt;&lt;p&gt;{!Reset_Support_Processes_for_Case_Record_Types_Step_4}&lt;/p&gt;&lt;p&gt;5 - Click &quot;Save&quot;.&lt;/p&gt;&lt;p&gt;6 - Click &quot;Edit&quot;.&lt;/p&gt;&lt;p&gt;7 - Change &quot;PC Case&quot; to &quot;VCC Support Process&quot;.&lt;/p&gt;&lt;p&gt;{!Reset_Support_Processes_For_Case_Record_Types_Step_7}&lt;/p&gt;&lt;p&gt;8 - Click &quot;Save&quot;.&lt;/p&gt;&lt;p&gt;9 - Repeat for the following Records Types:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Pharmacy Case&lt;/li&gt;&lt;li&gt;Virtual Clinic Visit Case&lt;/li&gt;&lt;li&gt;Clinical Triage Case&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>PD_Steps_Verify_VCC_Support_Process</name>
+        <label>PD Steps - Verify VCC Support Process</label>
+        <locationX>176</locationX>
+        <locationY>878</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>VCC_Setup_Appointment_Topic_1</targetReference>
+        </connector>
+        <fields>
+            <name>Verify_VCC_Support_Process</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Verify VCC Support Process is Correct&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Click &lt;a href=&quot;{!URL}lightning/setup/CaseProcess/home&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;HERE &lt;/a&gt;to navigate to Support Processes.&lt;/p&gt;&lt;p&gt;2 - Click on &quot;VCC Support Process&quot;.&lt;/p&gt;&lt;p&gt;{!VCC_Support_Process_Is_Correct_Step_2}&lt;/p&gt;&lt;p&gt;3 - Ensure these values are selected:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Open (default)&lt;/li&gt;&lt;li&gt;Closed - Resolved&lt;/li&gt;&lt;li&gt;Closed - Transferred&lt;/li&gt;&lt;li&gt;Closed - Error&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;4 - Click &quot;Save&quot; if you made any changes.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>VCC_Custom_Label</name>
+        <label>Custom Label</label>
+        <locationX>176</locationX>
+        <locationY>1238</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>VISN8RNandMSAQueueSetUp</targetReference>
+        </connector>
+        <fields>
+            <name>VCC_Custom_Label_Step</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Edit Custom Label&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Navigate to &quot;Custom Labels&quot; within Setup.&lt;/p&gt;&lt;p&gt;2 - Find and click on &quot;VAHC_Wellhive_Scheduling_URL&quot; within the Custom Labels.&lt;/p&gt;&lt;p&gt;3 - Click &quot;Edit&quot;.&lt;/p&gt;&lt;p&gt;4 - Change the value to: &lt;span style=&quot;font-size: 13px;&quot;&gt;https://app.pre-prod.wellhive.com/partner-patient/{ICN}/detail/appointments?embedded=true&lt;/span&gt;&lt;/p&gt;&lt;p&gt;{!Edit_Custom_Label_Step_4}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>VCC_Org_Settings</name>
+        <label>VCC Org Settings</label>
+        <locationX>176</locationX>
+        <locationY>518</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Call_Center</targetReference>
+        </connector>
+        <fields>
+            <name>VCC_Org_Settings_Text</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;VCC Org Settings&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Click &lt;a href=&quot;{!URL}lightning/setup/CustomMetadata/page?address=%2Fm0a%3Fsetupid%3DCustomMetadata&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;HERE &lt;/a&gt;to navigate to Manage Records for VCC Org Settings under Custom Metadata Types.&lt;/p&gt;&lt;p&gt;2 - Click &quot;New&quot;.&lt;/p&gt;&lt;p&gt;{!VCC_Org_Settings_Step_2}&lt;/p&gt;&lt;p&gt;3 - Enter the following information:&lt;/p&gt;&lt;p&gt;&lt;strong&gt;VCC Org Settings Name: {!Get_Sandbox_Name}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Org Id: {!Org_Id}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Type: QA&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Integration User: NA&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Check &quot;Enable SSO Mocking&quot;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;﻿{!VCC_Org_Settings_Step_3}&lt;/p&gt;&lt;p&gt;4 - Click &quot;Save&quot;.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>VCC_Setup_Appointment_Template_1</name>
+        <label>Setup Appointment Template</label>
+        <locationX>176</locationX>
+        <locationY>1118</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>VCC_Custom_Label</targetReference>
+        </connector>
+        <fields>
+            <name>VCC_Setup_Appointment_Template</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Setup Appointment Template&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 -  Click on the &quot;Appointment Templates&quot; tab.&lt;/p&gt;&lt;p&gt;2 - Click &quot;New&quot;.&lt;/p&gt;&lt;p&gt;3 - Complete the following information:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Appointment Template Name: VCV&lt;/li&gt;&lt;li&gt;Description: Primary VCV Appointment Template with 30 minutes duration&lt;/li&gt;&lt;li&gt;Estimated Duration: 30&lt;/li&gt;&lt;li&gt;Duration Type: Minutes&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;{!Setup_Appt_Template_Step_3}&lt;/p&gt;&lt;p&gt;4 - Click &quot;Save&quot;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Relate Appointment Template to Topic&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;1 - While in the newly created VCV Appointment Template, click the &quot;Related&quot; tab&lt;/p&gt;&lt;p&gt;2 - Click the &quot;New&quot; button next to Appointment Topic Members&lt;/p&gt;&lt;p&gt;3 - Add the &quot;Virtual Clinic Visit&quot; Appointment Topic previously created.&lt;/p&gt;&lt;p&gt;4 - Click &quot;Save&quot;.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>VCC_Setup_Appointment_Topic_1</name>
+        <label>Setup Appointment Topic</label>
+        <locationX>176</locationX>
+        <locationY>998</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>VCC_Setup_Appointment_Template_1</targetReference>
+        </connector>
+        <fields>
+            <name>VCC_Setup_Appointment_Topic</name>
+            <fieldText>&lt;p&gt;&lt;strong&gt;Setup Appointment Topic&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;1 - Click &lt;a href=&quot;{!URL}lightning/o/WorkTypeGroup/list?filterName=Recent&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;HERE &lt;/a&gt;to navigate to Salesforce Scheduler Setup.&lt;/p&gt;&lt;p&gt;2 - Click on the &quot;Appointment Topics&quot; tab.&lt;/p&gt;&lt;p&gt;3 - Click &quot;New&quot;.&lt;/p&gt;&lt;p&gt;4 - Complete the following information:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Appointment Topic Name: Virtual Clinic Visit&lt;/li&gt;&lt;li&gt;Group Type: Default&lt;/li&gt;&lt;li&gt;Active: Selected&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;5 - Click &quot;Save&quot;.&lt;/p&gt;&lt;p&gt;{!Setup_Appt_Topic_Step_5}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>VISN8RNandMSAQueueSetUp</name>
+        <label>VISN 8 RN and MSA Queue Set Up</label>
+        <locationX>176</locationX>
+        <locationY>1358</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Finish_Screen</targetReference>
+        </connector>
+        <fields>
+            <name>VISN8RNandMSAQueueSetUpDetails</name>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;VISN 8 RN and MSA Queue Setup&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;1 - Click &lt;/span&gt;&lt;a href=&quot;{!URL}lightning/setup/CustomMetadata/page?address=%2Fm0e%3Fsetupid%3DCustomMetadata&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-size: 12px;&quot;&gt;HERE &lt;/a&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;to navigate to the VCC Queue Mappings.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;2 - Click &apos;New&apos; to create a Queue Record.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;3 - Create a &lt;/span&gt;&lt;span style=&quot;font-size: 12px; background-color: var(--slds-g-color-neutral-base-100, var(--lwc-colorBackgroundInput,rgb(255, 255, 255))); color: var(--slds-g-color-neutral-base-30, var(--lwc-colorTextWeak,rgb(68, 68, 68)));&quot;&gt;VISN 8 RN Queue Record, utilizing these field values:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;Label&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;: CCC-V8-RN&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;VCC Queue Mapping Name&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 12px; color: rgb(68, 68, 68);&quot;&gt;CCC-V8-RN&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px; color: rgb(68, 68, 68);&quot;&gt;Case Record Type&lt;/strong&gt;&lt;span style=&quot;font-size: 12px; color: rgb(68, 68, 68);&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;VCC_Clinical_Triage&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;VISN Name&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;: VISN 8&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;Queue Developer Name&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;: CCC_V8_RN&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;{!VISN8_RN_Queue_Setup}&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;4 - Create a VISN 8 MSA Queue Record utilizing these field values:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;Label&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;: CCC-V8-MSA&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;VCC Queue Mapping Name&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;:&amp;nbsp;CCC-V8-MSA&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;Case Record Type&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;:&amp;nbsp;VCC_Administrative&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;VISN Name&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;: VISN 8&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 12px;&quot;&gt;Queue Developer Name&lt;/strong&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;: CCC_V8_MSA&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;{!VISN8_MSA_Queue_Setup}&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Intro_Screen</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Org_Id</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Organization.Id</elementReference>
+        </value>
+    </variables>
+    <variables>
+        <description>The name of the flow user</description>
+        <name>User_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$User.FirstName</elementReference>
+        </value>
+    </variables>
+</Flow>

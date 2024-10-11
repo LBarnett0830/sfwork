@@ -1,0 +1,450 @@
+<template>
+    <!-- <div class="slds-m-top_small slds-m-bottom_medium"> -->
+        <lightning-card title="Import Test Data">
+          <template if:false={isFailure}>
+        <lightning-button data-name="initialImport" label="Import Test Data" title="Import Test Data" icon-name="utility:record_create" 
+        icon-position="left" onclick={handleClick} name="showSpinner" disabled={disabled}
+        class="slds-align_absolute-center slds-m-around_x-large">
+        </lightning-button>
+      </template>
+        <template if:true={isFailure}>         
+          <lightning-button data-name="relaunch" variant="destructive" label="Relaunch Failed Imports" title="Relaunch Failed Imports" icon-name="utility:record_create" 
+          icon-position="left" onclick={handleClick} name="showSpinner"
+          class="slds-align_absolute-center slds-m-around_x-large">
+          </lightning-button>
+        </template>
+        <br>
+
+    <!-- <h3 id="element-with-table-label" class="slds-text-heading_medium slds-m-bottom_xx-small">Test Data Import Status</h3> -->
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-labelledby="element-with-table-label other-element-with-table-label">
+        <thead>
+          <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Data Set">Data Set</div>
+            </th>
+            <th class="" scope="col">
+              <div class="slds-truncate" title="Status">Status</div>
+            </th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr class="slds-hint-parent">
+              <th data-label="Data Set" scope="row">
+                <div class="slds-truncate" title="Account Location Facility">
+                  Account Location Facility Import
+                </div>
+              </th>
+              <td data-label="Status">
+                <div class="slds-truncate" title="Success or Failure">
+                    <template if:true={AccountLocationFacilityStatus}>
+                        Success!
+                    </template>
+                    <template if:true={accountFailure}>
+                        Failure!
+                    </template>
+                </div>
+              </td>
+
+            </tr>
+            <tr class="slds-hint-parent">
+              <th data-label="Data Set" scope="row">
+                <div class="slds-truncate" title="Mass Signers">
+                  Mass Signers Import
+                </div>
+              </th>
+              <td data-label="Status">
+                <div class="slds-truncate" title="Success or Failure">
+                    <template if:true={MassSignersStatus}>
+                        Success!
+                    </template>
+                    <!--
+                    <template if:true={massSignersFailure}>
+                        Failure!
+                    </template>
+                    -->
+                </div>
+              </td>
+
+            </tr>
+              <tr class="slds-hint-parent">
+                <th data-label="Data Set" scope="row">
+                  <div class="slds-truncate" title="Mass CPT">
+                    Mass CPT to Progress Note Import
+                  </div>
+                </th>
+                <td data-label="Status">
+                  <div class="slds-truncate" title="Success or Failure">
+                    <template if:true={massCptToProgressNoteMappingStatus}>
+                        Success!
+                    </template>
+                      <!--
+                    <template if:true={massCptFailure}>
+                        Failure!
+                    </template>
+                    -->
+                </div>
+                </td>
+
+              </tr>
+              <tr class="slds-hint-parent">
+                <th data-label="Data Set" scope="row">
+                  <div class="slds-truncate" title="Custom Setting Addendum">
+                    Custom Setting Addendum Import
+                  </div>
+                </th>
+                <td data-label="Status">
+                  <div class="slds-truncate" title="Success or Failure">
+                    <template if:true={customSettingAddendumStatus}>
+                        Success!
+                    </template>
+                      <!--
+                    <template if:true={customSettingAddendumFailure}>
+                        Failure!
+                    </template>
+                    -->
+                </div>
+                </td>
+
+              </tr>
+                <tr class="slds-hint-parent">
+                    <th data-label="Data Set" scope="row">
+                      <div class="slds-truncate" title="Mass Code Set">
+                        Mass Code Set Import
+                      </div>
+                    </th>
+                    <td data-label="Status">
+                      <div class="slds-truncate" title="Success or Failure">
+                        <template if:true={massCodeSetStatus}>
+                            Success!
+                        </template>
+                          <!--
+                        <template if:true={massCodeSetFailure}>
+                            Failure!
+                        </template>
+                        -->
+                    </div>
+                    </td>
+
+                  </tr>
+                  <tr class="slds-hint-parent">
+                    <th data-label="Data Set" scope="row">
+                      <div class="slds-truncate" title="Custom Setting Note Import">
+                        Custom Setting Note Import
+                      </div>
+                    </th>
+                    <td data-label="Status">
+                      <div class="slds-truncate" title="Success or Failure">
+                        <template if:true={customSettingNoteStatus}>
+                            Success!
+                        </template>
+                          <!--
+                        <template if:true={customSettingNoteFailure}>
+                            Failure!
+                        </template>
+                        -->
+                    </div>
+                    </td>
+
+            </tr>
+            <tr class="slds-hint-parent">
+                <th data-label="Data Set" scope="row">
+                  <div class="slds-truncate" title="Test Users">
+                    Test Users Import
+                  </div>
+                </th>
+                <td data-label="Status">
+                  <div class="slds-truncate" title="Success or Failure">
+                    <template if:true={createTestUsersStatus}>
+                        Success!
+                    </template>
+                      <!--
+                    <template if:true={createTestUsersFailure}>
+                        Failure!
+                    </template>
+                    -->
+                </div>
+                </td>
+
+        </tr>
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Mass Vista User Import">
+              Mass Vista User Import
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={massVistaUserImportStatus}>
+                  Success!
+              </template>
+                <!--
+              <template if:true={massVistaUserFailure}>
+                  Failure!
+              </template>
+              -->
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Create Automation Test Users">
+              Automation Test Users Import
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={createAutomationTestUsersStatus}>
+                  Success!
+              </template>
+                <!--
+              <template if:true={massVistaUserFailure}>
+                  Failure!
+              </template>
+              -->
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Create VCV and Queue Users">
+              VCV and Queue Test Users Import
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={createVCVAndQueueTestUsersStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Test Users Permissions">
+              Assign Test Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignTestUsersPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Test SOT RN and MD Users Permissions">
+              Assign Test SOT RN and MD Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignTestSotRnMdUserPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Automation Users Permissions">
+              Assign Automation Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignAutomationUserPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Pharm Automation Users Permissions">
+              Assign Pharmacy Automation Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignPharmAutomationUserPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign VCV Test Users Permissions">
+              Assign VCV Test Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignVCVTestUsersPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign VCV Test Users MSA and Lead MSA Permissions">
+              Assign VCV Test Users MSA and Lead MSA Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignVCVTestUsersMSALeadMSAPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Queue Test Users Permissions">
+              Assign Queue Test Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignQueueTestUsersPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Create Training Mode Test Users">
+              Create Training Mode Test Users
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={createTrainingModeTestUsersStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Training Mode Test Users Permissions">
+              Assign Training Mode Test Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignTrainingModeTestUsersPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign Pharm Training Mode Test Users Permissions">
+              Assign Pharm Training Mode Test Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignPharmTrainingModeTestUsersPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="Assign MP and CA Training Mode Test Users Permissions">
+              Assign MP and CA Training Mode Test Users Permissions
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={assignMPandCaTrainingModeTestUsersPermissionsStatus}>
+                  Success!
+              </template>
+          </div>
+          </td>
+        </tr>
+            <!--
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="BS Config">
+              BS Config
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={bsConfigStatus}>
+                  Success!
+              </template>
+              <template if:true={bsConfigFailure}>
+                  Failure!
+              </template>
+          </div>
+          </td>
+        </tr>
+
+        <tr class="slds-hint-parent">
+          <th data-label="Data Set" scope="row">
+            <div class="slds-truncate" title="BS Assigned User">
+              BS Assigned User
+            </div>
+          </th>
+          <td data-label="Status">
+            <div class="slds-truncate" title="Success or Failure">
+              <template if:true={bsAssignedUserStatus}>
+                  Success!
+              </template>
+              <template if:true={bsAssignedUserFailure}>
+                  Failure!
+              </template>
+          </div>
+          </td>
+        </tr>
+        -->
+          </tbody>
+        </table>
+    </lightning-card>
+    <template if:true={buttonClicked}>
+        <template if:false={setupComplete}>
+            <c-vcc-lightning-spinner
+            spinner-text="Importing Test Data - This may take up to 5 minutes"
+            size="large"
+            ></c-vcc-lightning-spinner>
+        </template>
+    </template>
+
+    <template if:true={buttonClicked}>
+      <template if:true={turnOnRelaunchSpinner}>
+        <template if:false={setupComplete}>
+          <c-vcc-lightning-spinner
+          spinner-text="Relaunching Failed Imports - This may take up to 5 minutes"
+          size="large"
+          ></c-vcc-lightning-spinner>
+        </template>
+      </template>
+  </template>
+    <!-- </div> -->
+</template>
